@@ -57,8 +57,8 @@ Build / usage
 
 Requirements:
 - Jailbroken PS4
-- OpenOrbis or Orbis SDK
-- .sprx loader
+- GoldHEN
+- Official SDK
 
 Steps:
 1. Build as .sprx
