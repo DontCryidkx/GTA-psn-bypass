@@ -1,172 +1,80 @@
-PS4 NP / Orbis Network Hook Framework
+ps4-np-hooks
+============
 
-⚠️ For research, learning, and reverse-engineering purposes only
-This project is not intended for cheating, piracy, or abusing online services.
+Minimal PS4 (Orbis OS) NP hook / stub module.
 
-📌 Overview
+Hooks a large subset of NP, UserService, Auth, Commerce and WordFilter
+functions and returns fixed values so titles can run without real PSN
+connectivity.
 
-This project implements a low-level hook framework for PlayStation 4 (Orbis OS) that intercepts and emulates a large portion of NP (Network Platform), UserService, Commerce, Auth, and WordFilter APIs.
+Intended for reverse engineering, research and offline testing.
 
-The primary goal is to stub out NP dependencies in order to:
 
-Run games offline that normally require PSN
+Overview
+--------
 
-Bypass NP availability, state, and Plus checks
+- Forces NP to report "online" and "logged in"
+- Returns a fixed Online ID
+- Stubs NP Auth async requests
+- Auto-completes Commerce dialogs
+- Always authorizes PS Plus
+- Disables word filtering
+- Emulates bandwidth test results
+- Bypasses parental control checks
 
-Simulate NP Auth and async request flows
+No real PSN communication is performed.
 
-Assist in reverse-engineering PS4 network behavior
 
-✨ Features
-🔌 NP / UserService Hooks
+Use cases
+---------
 
-sceNpCheckNpAvailability
+- Offline testing of NP-dependent titles
+- Reverse engineering NP flows
+- Debugging games that hang on PSN checks
+- SPRX / payload experimentation
 
-sceNpGetState
 
-sceNpGetOnlineId
+Non-goals
+---------
 
-sceNpGetAccountId
+- Not real PSN functionality
+- Not online play
+- Not intended for cheating or piracy
 
-sceNpGetNpId
 
-sceUserServiceGetEvent
+Technical notes
+---------------
 
-Game Presence & State callbacks
+- Direct inline jump patching
+- Memory protection via sceKernelMprotect
+- Hooks applied to hardcoded system addresses
+- No syscall emulation
+- Designed as an injectable .sprx module
 
-✔️ Always reports online & logged-in state
 
-🔐 NP Authentication (Auth)
+Build / usage
+-------------
 
-sceNpAuthCreateAsyncRequest
+Requirements:
+- Jailbroken PS4
+- OpenOrbis or Orbis SDK
+- .sprx loader
 
-sceNpAuthPollAsync
+Steps:
+1. Build as .sprx
+2. Inject at runtime
+3. Hooks are applied automatically
+4. System notification confirms success
 
-sceNpAuthGetAuthorizationCode
 
-✔️ Fully emulated async lifecycle
-✔️ Returns a fake authorization code
-⚠️ No real PSN authentication occurs
+Disclaimer
+----------
 
-🛒 NP Commerce / Store
+For research and educational purposes only.
+Use at your own risk.
 
-sceNpCommerceDialogInitialize
 
-sceNpCommerceDialogOpen
+License
+-------
 
-sceNpCommerceDialogUpdateStatus
-
-sceNpCommerceDialogGetResult
-
-PS Store icon hooks
-
-✔️ Commerce dialogs auto-complete successfully
-✔️ Games believe purchases/subscriptions are valid
-
-🚀 Async NP Requests
-
-sceNpCreateAsyncRequest
-
-sceNpPollAsync
-
-✔️ Requests complete immediately
-✔️ Proper state transitions are preserved
-
-📡 Bandwidth Test Emulation
-
-sceNpBandwidthTestInitStart
-
-sceNpBandwidthTestGetStatus
-
-sceNpBandwidthTestShutdown
-
-✔️ Fake but realistic bandwidth results
-
-Download: 100 Mbps
-
-Upload: 20 Mbps
-
-👨‍👩‍👧 Parental Control & Account Info
-
-sceNpGetParentalControlInfo
-
-sceNpSetContentRestriction
-
-sceNpCheckPlus
-
-sceNpGetAccountCountry
-
-sceNpGetAccountDateOfBirth
-
-✔️ Adult account (18+)
-✔️ No restrictions
-✔️ PS Plus always authorized
-
-🧼 Word Filter
-
-sceNpWordFilterCreateTitleCtx
-
-sceNpWordFilterCreateAsyncRequest
-
-sceNpWordFilterSanitizeComment
-
-sceNpWordFilterPollAsync
-
-✔️ Word filtering disabled (input == output)
-
-🧠 Design Notes
-
-Uses direct inline jump patching (WriteJump)
-
-Memory protection handled via sceKernelMprotect
-
-No SDK stubs — hooks are applied to real system addresses
-
-Designed for payload / sprx injection
-
-Thread-safe enough for typical game NP usage
-
-🧪 Tested Use-Cases
-
-Games that hang on “Connecting to PSN”
-
-Titles requiring PS Plus checks for offline modes
-
-NP-dependent menus (store, presence, auth)
-
-Reverse-engineering NP flows without Sony servers
-
-⚙️ Build & Usage
-Requirements
-
-Jailbroken PS4
-
-Orbis SDK / OpenOrbis
-
-Payload or .sprx loader
-
-C++17 compatible toolchain
-
-Usage
-
-Build as a .sprx
-
-Inject or load the module at runtime
-
-Hooks are applied automatically
-
-Notification confirms success:
-
-hooked successfully!
-
-⚠️ Disclaimer
-
-This software:
-
-Does not connect to PlayStation Network
-
-Does not provide real PSN functionality
-
-Is intended strictly for offline use, debugging, and research
-
-You are responsible for how you use it.
+MIT
