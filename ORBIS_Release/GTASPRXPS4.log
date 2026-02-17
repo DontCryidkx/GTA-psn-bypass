@@ -1,0 +1,21 @@
+﻿  prx.cpp
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(257,12): warning : unused variable 'g_user_logged_in' [-Wunused-variable]
+  static int g_user_logged_in = 0;
+             ^
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(258,29): warning : unused variable 'g_user_id' [-Wunused-variable]
+  static SceUserServiceUserId g_user_id = 1;
+                              ^
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(259,12): warning : unused variable 'g_login_event_pending' [-Wunused-variable]
+  static int g_login_event_pending = 1;
+             ^
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(260,12): warning : unused variable 'g_logout_event_pending' [-Wunused-variable]
+  static int g_logout_event_pending = 0;
+             ^
+  4 warnings generated.
+  GTASPRXPS4.vcxproj -> C:\Users\DontCry361x\Documents\GTASPRXPS4\ORBIS_Release\GTAServer.prx
+  '"C:\Users\DontCry361x\Documents\GTASPRXPS4\ORBIS_Release\make_sprx.bat"' is not recognized as an internal or external command,
+  operable program or batch file.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(148,5): error MSB3073: The command "cd /d "C:\Users\DontCry361x\Documents\GTASPRXPS4\ORBIS_Release\"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(148,5): error MSB3073: call "C:\Users\DontCry361x\Documents\GTASPRXPS4\ORBIS_Release\make_sprx.bat"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(148,5): error MSB3073: 
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(148,5): error MSB3073: :VCEnd" exited with code 1.

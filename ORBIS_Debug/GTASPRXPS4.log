@@ -1,0 +1,30 @@
+﻿  prx.cpp
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(257,12): warning : unused variable 'g_user_logged_in' [-Wunused-variable]
+  static int g_user_logged_in = 0;
+             ^
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(258,29): warning : unused variable 'g_user_id' [-Wunused-variable]
+  static SceUserServiceUserId g_user_id = 1;
+                              ^
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(259,12): warning : unused variable 'g_login_event_pending' [-Wunused-variable]
+  static int g_login_event_pending = 1;
+             ^
+C:\Users\DontCry361x\Documents\GTASPRXPS4\prx.cpp(260,12): warning : unused variable 'g_logout_event_pending' [-Wunused-variable]
+  static int g_logout_event_pending = 0;
+             ^
+  4 warnings generated.
+  orbis-ld 4.50.0.4213 (rel,orbis,4.500 @342832 x64) C:\Program Files (x86)\SCE\ORBIS SDKs\4.500\host_tools\bin\orbis-ld.exe
+Command line : warning : L0474: The --addressing=<mode> option only applies to main modules and will be ignored
+  GTASPRXPS4.vcxproj -> C:\Users\DontCry361x\Documents\GTASPRXPS4\ORBIS_Debug\GTAServer.prx
+  [INFO] Running fself.py ...
+  loading elf file: GTAServer.prx
+  saving fake signed elf file: test.sprx
+  processing segment #00...
+  processing segment #01...
+  processing segment #02...
+  processing segment #07...
+  processing segment #08...
+  done
+  [OK] SPRX created.
+  [INFO] Uploading to PS4...
+  Connecting to 192.168.137.241:2121 ...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(148,5): warning MSB5021: Terminating the task executable "cmd" and its child processes because the build was canceled.
